@@ -7,7 +7,7 @@ import Terms from "../screen/auth/Terms";
 import LiveChat from "../screen/main/LiveChat";
 import Profile from "../screen/main/Profile";
 import Login from "../screen/auth/Login";
-import Register from "../screen/auth/Register";
+import Register from "../screen/auth/RegisterFlow";
 import ProfileComplete from "../screen/main/ProfileComplete";
 import BottomNavigator from "./BottomTabBarNavigator";
 import Admins from "../screen/main/Admins";
@@ -20,6 +20,10 @@ import VideoCall from "../screen/main/VideoCall";
 import ChatMessageList from "../screen/main/ChatMessageList";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AllBlocks from "../screen/main/AllBlocks";
+import AddName from "../screen/auth/RegisterFlow/AddName";
+import AddEmail from "../screen/auth/RegisterFlow/AddEmail";
+import EmailConfirmation from "../screen/auth/RegisterFlow/EmailConfirmation";
+import SetupPassword from "../screen/auth/RegisterFlow/SetupPassword";
 export const navigationContainerRef = React.createRef();
 const RouteNavigator = () => {
   const [splashState, setSplashState] = useState(true);
@@ -44,10 +48,17 @@ const RouteNavigator = () => {
         // initialRouteName='AllBlocks'
       >
         {splashState && <Stack.Screen name="Splash" component={Splash} />}
-        <Stack.Screen name="Terms" component={Terms} />
-        <Stack.Screen name="Register" component={Register} />
+        {/* <Stack.Screen name="Register" component={Register} /> */}
         <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="BottomNavigator" component={BottomNavigator} />
+        <Stack.Screen name="AddName" component={AddName} />
+        <Stack.Screen name="AddEmail" component={AddEmail} />
+        <Stack.Screen name="EmailConfirmation" component={EmailConfirmation} />
+        <Stack.Screen name="SetupPassword" component={SetupPassword} />
+
+
+
+
+        {/* <Stack.Screen name="BottomNavigator" component={BottomNavigator} />
         <Stack.Screen name="ChatMessageList" component={ChatMessageList} />
         <Stack.Screen name="VideoCall" component={VideoCall} />
         <Stack.Screen name="VoiceCall" component={VoiceCall} />
@@ -59,7 +70,7 @@ const RouteNavigator = () => {
         <Stack.Screen name="ProfileComplete" component={ProfileComplete} />
         <Stack.Screen name="Admins" component={Admins} />
         <Stack.Screen name="InviteFriends" component={InviteFriends} />
-        <Stack.Screen name="AllBlocks" component={AllBlocks} />
+        <Stack.Screen name="AllBlocks" component={AllBlocks} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

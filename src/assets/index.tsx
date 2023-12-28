@@ -1,4 +1,35 @@
 export const images = {
+
+    background:require("../assets/images/background.png"),
+       facebook:require("../assets/icons/facebook.png"),
+       google:require("../assets/icons/google.png"),
+       apple:require("../assets/icons/apple.png"),
+       back:require("../assets/icons/back.png"),
+       tickIcon:require("../assets/icons/tick-icon.png"),
+       eye_cross:require("../assets/icons/eye-cross.png"),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     logo: require("./png/logo.png"),
     circles: require("./png/circles.png"),
     circles2: require("./png/circles2.png"),

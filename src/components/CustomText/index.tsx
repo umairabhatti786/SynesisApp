@@ -22,7 +22,7 @@ const CustomText = ({ color, size, fontFam, text, style, lineHeight, weight, num
                     color: color || colors.white,
                     fontSize: size || 12,
                     fontWeight: weight || 500,
-                    fontFamily: fontFam || "Montserrat-SemiBold",
+                    fontFamily: fontFam || "Inter-Regular",
                     ...(lineHeight && { lineHeight: lineHeight }),
                 }, style
             ]}

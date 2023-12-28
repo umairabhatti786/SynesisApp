@@ -7,7 +7,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-  self.moduleName = @"NuSocial";
+  self.moduleName = @"Synesis";
   if ([FIRApp defaultApp] == nil) {
     [FIRApp configure];
   }

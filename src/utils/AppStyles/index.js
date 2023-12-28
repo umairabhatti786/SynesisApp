@@ -7,6 +7,10 @@ export const appStyles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center"
     },
+    row:{
+        flexDirection:"row",
+        alignItems:"center",
+    },
     
     mainContainer: {
         flex: 1,

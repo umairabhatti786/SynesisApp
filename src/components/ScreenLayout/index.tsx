@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, StatusBar, View, SafeAreaView, Dimensions, KeyboardAvoidingView, Platform, Image } from 'react-native'
+import { ScrollView, StatusBar, View, SafeAreaView, Dimensions, KeyboardAvoidingView, Platform, Image, ImageBackground } from 'react-native'
 import { colors } from '../../utils/colors';
 import { images } from '../../assets';
 
@@ -19,89 +19,21 @@ const windowHeight = Dimensions.get('window').height;
 const ScreenLayout = ({ navigation, children, title, style, height, isProfileVisible, isLineVisible, linePosition, bgColor, ScrollRef }: Props) => {
     return (
         <>
-            <SafeAreaView
+        <View style={[{width:"100%",height:"100%",backgroundColor:"red",paddingTop:Platform.OS=="ios"?50:-10},style]}>
 
-                style={{ minHeight: height || "100%", backgroundColor: bgColor || colors.lightBlack }}
+            <ImageBackground
+            style={{width:"100%",height:"100%"}}
+            source={images.background}
             >
-                <ScrollView
-                    showsVerticalScrollIndicator={false}
-                    contentContainerStyle={{
-                    }}
-                    style={{
-                        backgroundColor: bgColor || colors.lightBlack,
-                    }}
-                    scrollEnabled={true}
-                    ref={ScrollRef}
-                >
-                    <KeyboardAvoidingView
-                        style={{
-                        }}
-                        contentContainerStyle={{
-                            flex: 1
-                        }}
-                    >
-                        <StatusBar
-                            barStyle="light-content"
-                            backgroundColor={"transparent"}
-                            translucent={true}
-                            animated={true}
-                            style={{
-                                position: 'absolute',
-                                top: 0,
-                                left: 0,
-                                right: 0,
-                            }}
-                        />
 
-                        <View
-                            style={{
-                                flex: 1,
-                                backgroundColor: colors.lightBlack,
-                                paddingVertical: 10,
-                                zIndex: 49,
-                                paddingBottom: 62,
-                                ...style,
-                            }}
-                        >
-                            <Image
-                                source={images.circles}
-                                style={{
-                                    position: "absolute",
-                                    width: 250,
-                                    height: 250,
-                                    resizeMode: "contain",
-                                    top: -50,
-                                    left: -30,
-                                }}
-                            />
-                            <Image
-                                source={images.circles2}
-                                style={{
-                                    position: "absolute",
-                                    width: 350,
-                                    height: 250,
-                                    resizeMode: "cover",
-                                    // bottom: 170,
-                                    right: 0,
-                                }}
-                            />
+                {children}
 
-                            {children}
-                        </View>
-                        <Image
-                            source={images.circles3}
-                            style={{
-                                position: "absolute",
-                                width: 350,
-                                height: 250,
-                                resizeMode: "cover",
-                                bottom: 0,
-                                opacity: 0.5
-                            }}
-                        />
-                    </KeyboardAvoidingView>
-                </ScrollView >
-            </SafeAreaView >
+            </ImageBackground>
+
+
+
+        </View>
+         
         </>
     )
 }
